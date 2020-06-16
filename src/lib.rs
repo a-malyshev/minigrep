@@ -30,6 +30,7 @@ pub fn run(config: &Config) -> Result<(), Box<dyn Error>> {
 
     let content = fs::read_to_string(&config.filename)?;
 
+    println!("\nsearch results:\n");
     if config.case_sensitive {
         for line in search_case_sensitive(&config.query, &content) {
             println!("{}", line);
